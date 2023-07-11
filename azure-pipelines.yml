@@ -68,8 +68,8 @@ jobs:
   #- template: localsteps.yml # Provide optional local YAML template here
   - template: frameworksteps.yml@PowerAppsTestAutomation
     parameters:
-      OnlineUsername: SPadmin@jbsjam.onmicrosoft.com
-      OnlinePassword: P@ssw0rd
+      OnlineUsername: $(OnlineUsername)
+      OnlinePassword: $(OnlinePassword)
       OnlineUrl: $(PortalUrl)
       BrowserType: ${{ parameters.BrowserType }}
       # File location format is /s/TeamProjectName/FilePathToTestAutomationURLs.json
