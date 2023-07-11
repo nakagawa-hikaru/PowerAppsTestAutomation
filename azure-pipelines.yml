@@ -8,10 +8,10 @@ resources:
       type: github
       # GitHub Repo(e.g. <FORK>/PowerAppsTestAutomation)
       # Recommended to Fork or Duplicate if custom auth flows are required
-      name: microsoft/PowerAppsTestAutomation
+      name: nakagawa-hikaru/PowerAppsTestAutomation
       ref: master
       # Name of the GitHub OAuth ADO Service Connection
-      endpoint: <ADO GitHub OAuth Service Connection Name>
+      endpoint: github.com_nakagawa-hikaru
 
 parameters:
  - name: image
@@ -68,11 +68,11 @@ jobs:
   #- template: localsteps.yml # Provide optional local YAML template here
   - template: frameworksteps.yml@PowerAppsTestAutomation
     parameters:
-      OnlineUsername: $(OnlineUsername)
-      OnlinePassword: $(OnlinePassword)
+      OnlineUsername: SPadmin@jbsjam.onmicrosoft.com
+      OnlinePassword: P@ssw0rd
       OnlineUrl: $(PortalUrl)
       BrowserType: ${{ parameters.BrowserType }}
       # File location format is /s/TeamProjectName/FilePathToTestAutomationURLs.json
-      TestAutomationURLFilePath: $(Build.SourcesDirectory)\$(LocalProjectName)\Samples\$(TestUrlFileName)
+      TestAutomationURLFilePath: nakagawa-hikaru\PowerAppsTestAutomation\TestAutomationURLs.json
       UsePrivateMode: $(PrivateMode)
       LoginMethod: ${{ parameters.LoginMethod }}
